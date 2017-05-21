@@ -40,10 +40,10 @@ class MahaDiscom(object):
         try:
             billdetails = json.loads(response.text)
         except ValueError as err:
-            print("Unable to parse json response" + str(err))
+            print(("Unable to parse json response" + str(err)))
 
         if response.status_code == 200:
             return billdetails
         else:
-            print("ERROR: Return code is Non-2xx : %d" % response.status_code)
+            print(("ERROR: Return code is Non-2xx : %d" % response.status_code))
             return {}
